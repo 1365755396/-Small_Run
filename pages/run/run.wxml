@@ -1,0 +1,34 @@
+<view class="head" >
+  <button class="btn" type="primary" bindtap="run">{{running?'暂停':'开始'}}</button>
+  <button class="btn" type="primary" bindtap="clear">清除数据</button>
+   <button class="btn" type="primary" bindtap="bao">保存</button>
+    <button class="btn" type="primary" bindtap="hui">回放</button>
+    <button class="btn" type="primary" bindtap="jie">结束</button>
+</view>
+<view class="counter">
+  <text space="nbsp">里程数:{{util.toKM(meters)}}km</text><br/>
+  <text space="nbsp">时间:{{util.formatHour(second)}}</text>
+  
+</view>
+
+<wxs module="util">
+// 计算时间
+function formatHour(second){
+  return Math.floor(second/3600)+":"+Math.floor((second % 3600)/60)+":"+(second % 60)
+}
+//计算距离
+function toKM(meter){
+  return (meter/1000).toFixed(2)
+}
+module.exports = {
+  formatHour : formatHour,
+  toKM:toKM
+}
+</wxs>
+<map
+  class="mapView"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  markers="{{markers}}"
+  polyline="{{polyline}}"
+  />

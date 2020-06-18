@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/run/run"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "阳光晨跑 林宏炜",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置将用于获取跑步定位"
+    }
+  },
+  "sitemapLocation": "sitemap5.json"
+}
